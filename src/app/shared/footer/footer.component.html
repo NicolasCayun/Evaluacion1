@@ -1,9 +1,13 @@
-<div class="pie">
-  <p>footer works!</p>
-  <p><a [routerLink]="['/']">Home</a></p>
-  <p><a [routerLink]="['/contacto']">Contacto</a></p>
-  <p><a [routerLink]="['/notFound']">Not Found</a></p>
-  <p><a [routerLink]="['/store']">Store</a></p>
-  <p><a [routerLink]="['/logOut']">Log Out</a></p>
-  <p><a [routerLink]="['/logIn']">Log In</a></p>
-</div>
+<ion-footer>
+  <ion-toolbar [color]="getColor()">
+    <!-- Usa la función para cambiar el color -->
+    <ion-title>Pie de página</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/']">Home</ion-button>
+      <ion-button [routerLink]="['/contacto']">Contacto</ion-button>
+      <ion-button [routerLink]="['/store']">Store</ion-button>
+      <ion-button [routerLink]="['/logOut']">Log Out</ion-button>
+      <ion-button [routerLink]="['/logIn']">Log In</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

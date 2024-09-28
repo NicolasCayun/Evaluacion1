@@ -1,0 +1,8 @@
+ion-card {
+  margin: 10px;
+  cursor: pointer; /* Para indicar que es clickeable */
+}
+
+ion-card:hover {
+  background-color: #f0f0f0; /* Efecto hover */
+}

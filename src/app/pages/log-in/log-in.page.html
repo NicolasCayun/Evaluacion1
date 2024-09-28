@@ -1,4 +1,5 @@
 <ion-content class="login-content">
+  <app-header></app-header>
   <div class="login-container">
     <h1>Iniciar Sesión</h1>
 
@@ -19,14 +20,19 @@
       >Iniciar Sesión</ion-button
     >
 
-    <!-- Botón de Recuperar Contraseña -->
-    <ion-button expand="block" fill="clear" color="medium"
-      >¿Olvidaste tu contraseña?</ion-button
+    <!-- Botón de Recuperar Contraseña en login.page.html -->
+    <ion-button
+      expand="block"
+      fill="clear"
+      color="medium"
+      (click)="navegarRecuperarPass()"
     >
+      ¿Olvidaste tu contraseña?
+    </ion-button>
 
     <!-- Mensaje de error -->
-    <ion-text color="danger" *ngIf="loginFailed">
-      Usuario o clave incorrectos.
-    </ion-text>
+    <ion-text color="danger" *ngIf="loginFailed"
+      >Usuario o clave incorrectos.</ion-text
+    >
   </div>
 </ion-content>

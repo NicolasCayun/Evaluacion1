@@ -49,4 +49,9 @@ export class LoginPage  implements OnInit {
     });
   }
 
+  navegarRecuperarPass() {
+    this.router.navigate(['/recuperar-contraseña']); // Cambia esto según la ruta correcta
+  }
+
+
 }
