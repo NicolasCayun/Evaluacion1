@@ -1,24 +1,32 @@
-<ion-content>
-  <app-header></app-header>
+<ion-content class="login-content">
+  <div class="login-container">
+    <h1>Iniciar Sesión</h1>
 
-  <!-- @if (isLoading) {
-    <ion-spinner name="bubbles"></ion-spinner>
-  } -->
-  <!-- Contenido del Login -->
-  <p>login works!</p>
-  <ion-item>
-    <ion-label position="floating">Usuario</ion-label>
-    <ion-input [(ngModel)]="usuario"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Clave</ion-label>
-    <ion-input [(ngModel)]="clave"></ion-input>
-  </ion-item>
-  <ion-button (click)="login(usuario, clave)">Iniciar sesión</ion-button>
-  <!-- Mostrar mensaje de error si el login falla -->
-  <ion-text color="danger" *ngIf="loginFailed">
-    Usuario o clave incorrectos.
-  </ion-text>
+    <!-- Input de Usuario -->
+    <ion-item class="input-item">
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input [(ngModel)]="usuario"></ion-input>
+    </ion-item>
 
-  <app-footer></app-footer>
+    <!-- Input de Clave -->
+    <ion-item class="input-item">
+      <ion-label position="floating">Clave</ion-label>
+      <ion-input [(ngModel)]="clave" type="password"></ion-input>
+    </ion-item>
+
+    <!-- Botón de Iniciar Sesión -->
+    <ion-button expand="block" (click)="login(usuario, clave)"
+      >Iniciar Sesión</ion-button
+    >
+
+    <!-- Botón de Recuperar Contraseña -->
+    <ion-button expand="block" fill="clear" color="medium"
+      >¿Olvidaste tu contraseña?</ion-button
+    >
+
+    <!-- Mensaje de error -->
+    <ion-text color="danger" *ngIf="loginFailed">
+      Usuario o clave incorrectos.
+    </ion-text>
+  </div>
 </ion-content>

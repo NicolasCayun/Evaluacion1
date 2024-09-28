@@ -1,6 +1,5 @@
 import { inject, Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { usuariosSimulados } from '../models/data.models';
 import { WebService } from '../servicios/web.service';
 
 @Injectable({
@@ -25,7 +24,7 @@ export class AuthService {
     // Aquí puedes implementar la lógica de autenticación real, como llamando a una API.
     // Por simplicidad, vamos a simular una autenticación con un nombre de usuario y clave fijos.
 
-    if (usuario === 'admin' && clave === 'admin') {
+    if (usuario === 'profesor' && clave === 'profesor' || usuario === 'alumno' && clave === 'alumno') {
       this.isAuthenticatedSubject.next(true); // Activar el estado de autenticación si la autenticación es correcta.  // Activar
       this.usuarioSubject.next(usuario); // Actualizar el nombre de usuario si la autenticación es correcta.  // Actualizar el
       this.loginFailedSubject.next(false);  // Restablecer loginFailed a false

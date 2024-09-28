@@ -34,53 +34,19 @@ export class LoginPage  implements OnInit {
     // Suscribirse al observable para verificar el estado de autenticación
     this.authService.isAuthenticated$.subscribe(isAuthenticated => {
 
-      if (isAuthenticated) {
+      if (isAuthenticated && usuario === 'profesor') {
         this.usuario = ''; // Limpiar el campo de usuario
         this.clave = ''; // Limpiar el campo de clave
-        this.router.navigate(['/store']); // Redirigir al usuario si el login es exitoso
+        this.router.navigate(['/principal-profesor']); // Redirigir al usuario si el login es exitoso
+      }
+      else if (isAuthenticated && usuario === 'alumno') {
+        this.usuario = ''; // Limpiar el campo de usuario
+        this.clave = ''; // Limpiar el campo de clave
+        this.router.navigate(['/principal-alumno']); // Redirigir al usuario si el login es exitoso
       } else {
         this.loginFailed = true; // Mostrar mensaje de error si el login falla
       }
     });
   }
-
-  /*
-  isLoading: boolean = false; // Variable para mostrar el estado de carga
-  async login(usuario: string, clave: string): Promise<void> { // Simular la autenticación con un retraso de 4 segundos
-    this.isLoading = true; // Activar el estado de carga
-    this.loginFailed = false; // Resetear el estado de loginFailed al iniciar sesión
-
-    const isAuthenticated = await this.authService.buscarBD3(usuario, clave); // Esperar a que se complete la autenticación
-
-    this.isLoading = false; // Desactivar el estado de carga una vez que la autenticación termine
-
-    if (isAuthenticated) {
-      this.usuario = ''; // Limpiar el campo de usuario
-      this.clave = ''; // Limpiar el campo de clave
-      this.router.navigate(['/store']); // Redirigir al usuario si el login es exitoso
-    } else {
-      this.loginFailed = true; // Mostrar mensaje de error si el login falla
-    }
-  }*/
-
-  /* isLoading: boolean = false;
-  async login(usuario: string, clave: string) {
-
-    this.isLoading = true; // Activar el estado de carga
-    await this.authService.buscarBD4(usuario, clave); // Intentar hacer login
-    this.isLoading = false; // Desactivar el estado de carga una vez que la autenticación termine
-
-    // Suscribirse al observable para verificar el estado de autenticación
-    this.authService.isAuthenticated$.subscribe(isAuthenticated => {
-
-      if (isAuthenticated) {
-        this.usuario = ''; // Limpiar el campo de usuario
-        this.clave = ''; // Limpiar el campo de clave
-        this.router.navigate(['/store']); // Redirigir al usuario si el login es exitoso
-      } else {
-        this.loginFailed = true; // Mostrar mensaje de error si el login falla
-      }
-    });
-  } */
 
 }

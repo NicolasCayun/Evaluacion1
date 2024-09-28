@@ -16,8 +16,7 @@ const routes: Routes = [
   { path: 'principal-profesor', component: PProfPage},
   { path: 'principal-alumno', component: PAluPage},
   { path: 'detalle-profesor', component: DProfPage},
-  { path: 'detalle-alumno', component: DAluPage},
-  { path: '**', redirectTo: 'not-found'}
+  { path: 'detalle-alumno', component: DAluPage}
 ]
 
 @NgModule({
