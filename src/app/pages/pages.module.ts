@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PagesRoutingModule } from './pages-routing.module';
-import { NotFoundPage } from './not-found/not-found.page';
 import { LoginPage } from './log-in/log-in.page';
 import { RContPage } from './r-cont/r-cont.page';
 import { PProfPage } from './p-prof/p-prof.page';
@@ -15,7 +14,6 @@ import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [
     LoginPage,
-    NotFoundPage,
     RContPage,
     PProfPage,
     PAluPage,

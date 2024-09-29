@@ -1,0 +1,55 @@
+
+// Estilo general del contenido
+ion-content {
+  --background: #f4f4f9; /* Fondo gris claro */
+  padding: 16px;
+}
+
+// Estilo del título de "Asignaturas"
+ion-title {
+  color: #003366; /* Azul oscuro */
+  font-size: 1.4rem; /* Tamaño mayor para que resalte */
+  font-weight: bold;
+  text-align: center; /* Centrar el título */
+}
+
+// Estilo de las tarjetas (ion-card)
+ion-card {
+  background-color: #e6f0ff; /* Azul muy claro para las tarjetas */
+  border: 1px solid #003366; /* Borde azul oscuro */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suavidad al hacer hover */
+}
+
+ion-card:hover {
+  background-color: #cce0ff; /* Cambio a un azul más oscuro en hover */
+  transform: translateY(-4px); /* Efecto de elevación */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Sombra más intensa en hover */
+}
+
+ion-card-title {
+  font-size: 1.2rem;
+  color: #003366; /* Azul oscuro */
+  font-weight: bold;
+}
+
+ion-card-content {
+  font-size: 1rem;
+  color: #4d4d4d; /* Gris oscuro para el texto de contenido */
+}
+
+// Estilo del botón de cerrar sesión
+ion-button {
+  --background: #003366; /* Fondo azul oscuro */
+  --color: #ffffff; /* Texto blanco */
+  border-radius: 5px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+ion-button:hover {
+  --background: #00509e; /* Azul un poco más claro en hover */
+}

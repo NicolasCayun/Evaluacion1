@@ -1,20 +1,56 @@
 .login-content {
+  --background: #195086; /* Azul muy claro para el fondo */
   display: flex;
   flex-direction: column;
-  min-height:max-content; /* Se asegura de ocupar toda la altura de la pantalla */
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  height: 100%; /* Asegura que el contenido ocupe toda la altura */
 }
 
 .login-container {
-  flex-grow: 1; /* Permite que el div crezca y ocupe el espacio disponible */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centra el contenido verticalmente */
-  align-items: center; /* Centra el contenido horizontalmente */
-  padding: 16px; /* Opcional: añadir espacio alrededor del contenido */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px; /* Limita el ancho máximo para pantallas grandes */
+  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 10px; /* Añade bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Añade una sombra suave */
 }
 
-ion-item,
-ion-button {
+h1 {
+  color: #2c3e50;
+  font-size: 2em;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+ion-item {
+  --background: #ffffff;
+  --border-color: #bdc3c7;
+  --color: #2c3e50;
   width: 100%;
-  max-width: 400px; /* Limita el ancho máximo del formulario y botones */
+  margin-bottom: 16px; /* Añade espacio entre los elementos */
+}
+
+ion-button {
+  --background: #5578cd;
+  --color: #ffffff;
+  --border-radius: 8px;
+  margin-top: 16px;
+  width: 100%;
+}
+
+ion-button[fill="clear"] {
+  --color: #7f8c8d;
+  margin-top: 8px;
+  text-decoration: none; /* Elimina el subrayado */
+}
+
+/* Añade espacio para el mensaje de error */
+ion-text[color="danger"] {
+  margin-top: 16px;
+  text-align: center;
 }

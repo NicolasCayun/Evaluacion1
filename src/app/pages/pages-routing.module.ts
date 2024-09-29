@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NotFoundPage } from './not-found/not-found.page';
 import { LoginPage } from './log-in/log-in.page';
 import { RContPage } from './r-cont/r-cont.page';
 import { PProfPage } from './p-prof/p-prof.page';
@@ -11,7 +10,6 @@ import { DAluPage } from './d-alu/d-alu.page';
 const routes: Routes = [
   { path: '', component: LoginPage},
   { path: 'login', component: LoginPage},
-  { path: 'not-found', component: NotFoundPage},
   { path: 'recuperar-contraseña', component: RContPage},
   { path: 'principal-profesor', component: PProfPage},
   { path: 'principal-alumno', component: PAluPage},
