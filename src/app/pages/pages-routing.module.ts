@@ -6,6 +6,7 @@ import { PProfPage } from './p-prof/p-prof.page';
 import { PAluPage } from './p-alu/p-alu.page';
 import { DProfPage } from './d-prof/d-prof.page';
 import { DAluPage } from './d-alu/d-alu.page';
+import { RegistroPage } from './registro/registro.page';
 
 const routes: Routes = [
   { path: '', component: LoginPage},
@@ -14,7 +15,9 @@ const routes: Routes = [
   { path: 'principal-profesor', component: PProfPage},
   { path: 'principal-alumno', component: PAluPage},
   { path: 'detalle-profesor', component: DProfPage},
-  { path: 'detalle-alumno', component: DAluPage}
+  { path: 'detalle-alumno', component: DAluPage},
+  { path: 'registro', component: RegistroPage},
+
 ]
 
 @NgModule({

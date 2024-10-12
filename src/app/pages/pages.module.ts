@@ -7,6 +7,7 @@ import { PProfPage } from './p-prof/p-prof.page';
 import { PAluPage } from './p-alu/p-alu.page';
 import { DProfPage } from './d-prof/d-prof.page';
 import { DAluPage } from './d-alu/d-alu.page';
+import { RegistroPage } from './registro/registro.page';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { SharedModule } from '../shared/shared.module';
@@ -18,7 +19,8 @@ import { SharedModule } from '../shared/shared.module';
     PProfPage,
     PAluPage,
     DProfPage,
-    DAluPage
+    DAluPage,
+    RegistroPage
   ],
   imports: [
     CommonModule,

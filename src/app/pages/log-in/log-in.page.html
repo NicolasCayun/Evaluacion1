@@ -5,22 +5,32 @@
 
     <!-- Input de Usuario -->
     <ion-item class="input-item">
-      <ion-label position="floating">Usuario</ion-label>
-      <ion-input [(ngModel)]="usuario"></ion-input>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [(ngModel)]="email" required></ion-input>
     </ion-item>
 
     <!-- Input de Clave -->
     <ion-item class="input-item">
       <ion-label position="floating">Clave</ion-label>
-      <ion-input [(ngModel)]="clave" type="password"></ion-input>
+      <ion-input [(ngModel)]="clave" type="password" required></ion-input>
     </ion-item>
 
     <!-- Botón de Iniciar Sesión -->
-    <ion-button expand="block" (click)="login(usuario, clave)"
-      >Iniciar Sesión</ion-button
+    <ion-button
+      expand="block"
+      (click)="login(email, clave)"
+      [disabled]="isLoading"
+    >
+      <ion-spinner *ngIf="isLoading" slot="start" name="crescent"></ion-spinner>
+      Iniciar Sesión
+    </ion-button>
+
+    <!-- Botón de Registro -->
+    <ion-button expand="block" (click)="navegarRegistro()"
+      >Registrarme</ion-button
     >
 
-    <!-- Botón de Recuperar Contraseña en login.page.html -->
+    <!-- Botón de Recuperar Contraseña -->
     <ion-button
       expand="block"
       fill="clear"
@@ -31,8 +41,8 @@
     </ion-button>
 
     <!-- Mensaje de error -->
-    <ion-text color="danger" *ngIf="loginFailed"
-      >Usuario o clave incorrectos.</ion-text
-    >
+    <ion-text color="danger" *ngIf="loginFailed">
+      Usuario o clave incorrectos.
+    </ion-text>
   </div>
 </ion-content>

@@ -10,7 +10,7 @@ export class WebService {
 
   constructor() { }
 
-  request(type: 'POST' | 'GET', url: string, path: string, body: any = {}){ // Crear una promesa para realizar la petición HTTP.  // Crear una pro
+  request(type: 'POST' | 'GET' | 'PUT' | 'DELETE', url: string, path: string, body: any = {}){ // Crear una promesa para realizar la petición HTTP.  // Crear una pro
     return new Promise((resolve) => {
       const headers = new HttpHeaders({
         'Content-Type': 'application/json',
@@ -26,6 +26,20 @@ export class WebService {
 
       if (type == 'GET') {
         this.httpClient.get(url + '/' + path, {headers}).subscribe( data => {  // Realizar la petición GET y resolver la promesa con el resultado.  // Real
+          resolve(data); // Resuelve la promesa con el resultado.
+          return;
+        });
+      }
+
+      if (type == 'PUT') {
+        this.httpClient.put(url + '/' + path, body, {headers}).subscribe( data => { // Realizar la petición PUT y resolver la promesa con el resultado.  // Real
+          resolve(data); // Resuelve la promesa con el resultado.
+          return;
+        });
+      }
+
+      if (type == 'DELETE') {
+        this.httpClient.delete(url + '/' + path, {headers}).subscribe( data => {  // Realizar la petición DELETE y resolver la promesa con el resultado.  // Real
           resolve(data); // Resuelve la promesa con el resultado.
           return;
         });
