@@ -11,6 +11,7 @@ import { RegistroPage } from './registro/registro.page';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { SharedModule } from '../shared/shared.module';
+import { QRCodeModule } from 'angularx-qrcode';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SharedModule } from '../shared/shared.module';
     PagesRoutingModule,
     SharedModule, // Include SharedModule for common components and modules
     IonicModule, // Include FormsModule for form validation
-    FormsModule // Include IonicModule for Ionic components
+    FormsModule,
+    QRCodeModule // Include IonicModule for Ionic components
   ]
 })
 export class PagesModule { }

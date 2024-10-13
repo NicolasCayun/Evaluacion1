@@ -1,5 +1,5 @@
 <ion-content>
-  <app-header [titulo]="'Bienvenido, ' + 'Helton'"></app-header>
+  <app-header></app-header>
   <ion-toolbar>
     <ion-title>Detalle de Asignatura</ion-title>
   </ion-toolbar>
@@ -13,6 +13,38 @@
       <p>Contenido: {{ asignatura.contenido }}</p>
     </ion-card-content>
   </ion-card>
-  <ion-button expand="full" color="primary">Pasar Lista</ion-button>
+
+  <!-- Botón para abrir el modal con el código QR -->
+  <ion-button expand="full" color="primary" (click)="abrirModal()"
+    >Pasar Lista</ion-button
+  >
+
   <ion-button expand="full" (click)="volver()">Volver</ion-button>
+
+  <!-- Modal -->
+  <ion-modal #modal>
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Código QR</ion-title>
+          <ion-buttons slot="end">
+            <!-- Estilo modificado para el botón de cerrar -->
+            <ion-button (click)="cerrarModal()" class="close-button"
+              >Cerrar</ion-button
+            >
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <!-- Contenedor centrado para el código QR -->
+        <div class="qr-container">
+          <qrcode
+            [qrdata]="qrData"
+            [width]="256"
+            [errorCorrectionLevel]="'M'"
+          ></qrcode>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>

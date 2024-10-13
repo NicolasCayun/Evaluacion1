@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AsignaturasService } from 'src/app/servicios/asignaturas.service' // Ajusta la ruta según tu estructura
+import { AsignaturasService } from 'src/app/servicios/asignaturas.service';
+import { IonModal } from '@ionic/angular'; // Importar IonModal
 
 @Component({
   selector: 'app-d-prof',
@@ -9,21 +10,34 @@ import { AsignaturasService } from 'src/app/servicios/asignaturas.service' // Aj
 })
 export class DProfPage implements OnInit {
   asignatura: any;
+  qrData: string = '';  // Datos para generar el código QR
+
+  @ViewChild(IonModal) modal!: IonModal; // Usar ViewChild para controlar el modal
 
   constructor(private route: ActivatedRoute, private router: Router, private asignaturasService: AsignaturasService) { }
 
   ngOnInit() {
     const idParam = this.route.snapshot.paramMap.get('id');
-    const id = idParam ? +idParam : null; // Verifica si idParam no es null
+    const id = idParam ? +idParam : null;
     if (id !== null) {
       this.asignatura = this.asignaturasService.getAsignaturaById(id);
     } else {
-      // Manejar el caso en que no se proporciona un ID
       console.error('ID de asignatura no encontrado');
     }
   }
 
+  // Abrir el modal y generar el código QR
+  abrirModal() {
+    this.qrData = `Asignatura: ${this.asignatura.nombre}, Sala: ${this.asignatura.sala}, Horario: ${this.asignatura.horario}`;
+    this.modal.present(); // Abre el modal
+  }
+
+  // Cerrar el modal
+  cerrarModal() {
+    this.modal.dismiss(); // Cierra el modal
+  }
+
   volver() {
-    this.router.navigate(['/principal-profesor']); // Cambia esto según la ruta correcta
+    this.router.navigate(['/principal-profesor']);
   }
 }

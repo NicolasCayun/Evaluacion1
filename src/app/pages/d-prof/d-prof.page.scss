@@ -61,3 +61,23 @@ ion-button:hover {
 ion-button:last-of-type:hover {
   --background: #606060; /* Gris más oscuro en hover para el botón de volver */
 }
+
+/* Estilo para centrar el código QR */
+.qr-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ocupar toda la altura del modal */
+}
+
+/* Estilo para el botón de cerrar */
+.close-button {
+  background-color: #f0f0f0; /* Fondo gris claro */
+  color: #000; /* Texto negro */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+.close-button:hover {
+  background-color: #e0e0e0; /* Fondo más claro al pasar el cursor */
+}
+

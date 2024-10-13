@@ -32,7 +32,10 @@ export class PProfPage implements OnInit {
   }
 
   // Método para cerrar sesión
+  // Método para cerrar sesión
   logout() {
-    this.router.navigate(['/login']);
+    this.authService.logout(); // Llamar al método logout del servicio de autenticación
+    this.router.navigate(['/login']); // Navegar a la página de login
   }
+
 }
